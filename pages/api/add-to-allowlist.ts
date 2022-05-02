@@ -1,12 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { table } from "../../utils/Airtable";
+import styles from "../styles/Home.module.css";
 
 const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
   const { address } = JSON.parse(req.body);
 
   const record = await table
     .select({
-      fields: ["Addresses", "minted"],
+      fields: ["Addresses", "Minted"],
       filterByFormula: `NOT({Addresses} != '${address}')`,
     })
     .all();

@@ -9,6 +9,10 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
+import Head from "next/head";
+import Link from 'next/link'
+import React from 'react';
+import { Grid } from "@material-ui/core";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -21,42 +25,12 @@ const Home: NextPage = () => {
   const [mintLoading, setMintLoading] = useState(false);
   const network = useNetwork();
 
+
   useEffect(() => {
     edition?.get("0").then((nft) => {
       setNftData(nft.metadata);
     });
   }, [edition]);
-
-  const mintWithSignature = async () => {
-    setMintLoading(false);
-    const signedPayloadReq = await fetch(`/api/generate-mint-sig`, {
-      method: "POST",
-      body: JSON.stringify({ address }),
-    });
-
-    const signedPayload = await signedPayloadReq.json();
-
-    if (signedPayload.error) {
-      alert(signedPayload.error);
-      return;
-    }
-
-    try {
-      const nft = await edition?.signature.mint(signedPayload.signedPayload);
-      if (nft) {
-        await fetch(`/api/set-minted`, {
-          method: "POST",
-          body: JSON.stringify({ address }),
-        });
-      }
-      return nft;
-    } catch (err) {
-      console.error(err);
-      return null;
-    } finally {
-      setMintLoading(false);
-    }
-  };
 
   const addWallet = async () => {
     setAddWalletLoading(true);
@@ -74,54 +48,76 @@ const Home: NextPage = () => {
       alert(payloadJson.error);
     }
   };
+  var React = require('react');
+  var { SocialIcon } = require('react-social-icons');
 
   return (
     <div className={styles.container}>
+          <Head>
+        <title>Braxxaz - BRXZ-8833</title>
+        <meta name="description" content="Braxxaz - AirDrop list" />
+        <link rel="icon" href="/favicon.gif" />
+      </Head>   
+       <div className={styles.NFT}>
+        <div>
+          <h1 className={styles.title}>Welcome to BRXZ-8833!</h1>
+          <div className={styles.description}>
+            BRXZ-8833 an NFT collection of 109 Artworks made by the Artist Braxxaz.
+          </div>
+        </div>
+      </div>
       {address ? (
         <div className={styles.NFT}>
           {nftData?.image && (
             <Image
-              src={nftData?.image}
-              alt={nftData?.name}
-              width="746"
-              height="1024"
+              src="/braxxaz-icon.jpg"
+              width="273"
+              height="273"
               objectFit="contain"
             />
           )}
-          <p className={styles.nftDesc}>
-            <span>Name:</span> {nftData?.name}
-          </p>
-          <p className={styles.nftDesc}>
-            <span> Description:</span> {nftData?.description}
-          </p>
-
-          <button
+      <button
             className={styles.btn}
             disabled={addWalletLoading}
             onClick={addWallet}
           >
-            {addWalletLoading ? "loading..." : "Add wallet to allowlist"}
+            {addWalletLoading ? "loading..." : "Add wallet to AirDrop list"}
           </button>
-
-          <button
-            className={styles.btn}
-            disabled={
-              mintLoading || network[0]?.data?.chain?.id !== ChainId.Polygon
-            }
-            onClick={() => mintWithSignature()}
-          >
-            {network[0]?.data?.chain?.id === ChainId.Polygon
-              ? mintLoading
-                ? "loading..."
-                : "Mint"
-              : "Switch to Polygon"}
-          </button>
-        </div>
+          <div className={styles.btn}>
+    <Link href="https://opensea.io/collection/brxz-8833">
+      <a onClick={() => console.log("clicked")}>Explore the Collection</a>
+    </Link>
+  </div>
+        </div>  
       ) : (
         <button onClick={connectWithMetamask}>Connect with Metamask</button>
       )}
+      <footer className={styles.footer}>
+       ©2022 Braxxaz. All Rights Reserved
+       <br></br>
+       <Grid  container spacing={2} direction="row" justifyContent="space-around" alignItems="center" color= "black" style={{ margin: "1.5em 0" }}>
+      <Grid      >
+       <SocialIcon url="https://instagram.com/braxxaz" network="instagram" style={{ height:33, width: 33 }} />
+      </Grid>  <br></br>
+      <Grid      >
+       <SocialIcon url="https://twitter.com/braxxaz" network="twitter" style={{ height:33, width: 33 }}  />
+      </Grid>  <br></br>
+      <Grid      >
+       <SocialIcon url="https://facebook.com/braxxaz" network="facebook" style={{ height:33, width: 33 }}  />
+      </Grid>  <br></br>
+      <Grid      >
+       <SocialIcon url="https://pinterest.com/braxxaz13" network="pinterest" style={{ height:33, width: 33 }} />
+      </Grid>  <br></br>
+      <Grid      >
+       <SocialIcon url="https://www.behance.net/braxxaz" network="behance" style={{ height:33, width: 33 }} />
+       </Grid>  <br></br>
+      {/* add social media*/}
+    </Grid> 
+
+      </footer>
     </div>
   );
+
 };
 
 export default Home;

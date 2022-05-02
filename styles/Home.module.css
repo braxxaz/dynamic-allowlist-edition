@@ -3,37 +3,123 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 103vh;
   background-color: #000000;
+  text-align: center;
+  font-family: '8Bits';
 }
 
 .container > button,
 .btn {
-  background: #1ce;
-  color: #fff;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: inline-flex;
+  background: rgb(17, 238, 120);
+  color: rgb(0, 0, 0);
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  font-family: '8Bits';
+  margin-top: 33px;
 }
 
 .btn {
-  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 23px;
+  font-family: '8Bits';
+  
 }
 
 .NFT {
+  align-items: center;
+  flex-direction: column;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  object-position: left;
+  font-family: '8Bits';
 }
 
 .nftDesc {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 10px 0px;
   font-size: 0.8rem;
   color: rgb(255, 255, 255);
+  font-family: '8Bits';
 }
 
 .nftDesc > span {
+  letter-spacing: 3px;
   font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: '8Bits';
+}
+
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    object-position: left;
+    font-family: '8Bits';
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: #fff;
+  font-family: '8Bits';
+}
+
+.description {
+  line-height: 1;
+  margin: 2rem 0;
+  font-size: 0.7rem;
+  color: #fff;
+  font-family: '8Bits';
+}
+
+.button {
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 2%;
+  font-family: '8Bits';
+}
+
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 3%;
+  font-family: '8Bits';
+  font-size: 13px;
+}
+
+.image {
+  width: 70%;
+  height: 50%;
+  object-position: left;
 }
