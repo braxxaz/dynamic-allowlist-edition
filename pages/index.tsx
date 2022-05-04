@@ -2,7 +2,11 @@ import {
   useAddress,
   useEdition,
   useMetamask,
-  useNetwork,
+  useNetwork, 
+  useCoinbaseWallet, 
+  useDisconnect, 
+  useWalletConnect
+
 } from "@thirdweb-dev/react";
 import { ChainId, EditionMetadata } from "@thirdweb-dev/sdk";
 import type { NextPage } from "next";
@@ -14,9 +18,14 @@ import Link from 'next/link'
 import React from 'react';
 import { Grid } from "@material-ui/core";
 
+
 const Home: NextPage = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
+  const connectWithWalletConnect = useWalletConnect();
+  const connectWithCoinbaseWallet = useCoinbaseWallet();
+  const disconnectWallet = useDisconnect();
+
   const edition = useEdition("0xcD0148C3DB323CaD4597D8f0F028522850d2186e");
   const [nftData, setNftData] = useState<EditionMetadata["metadata"] | null>(
     null
@@ -57,12 +66,17 @@ const Home: NextPage = () => {
         <title>Braxxaz - BRXZ-8833</title>
         <meta name="description" content="Braxxaz - AirDrop list" />
         <link rel="icon" href="/favicon.gif" />
+ 
       </Head>   
+      <div>
+        <button className={styles.btn2} onClick={disconnectWallet}>Disconnect</button>
+      </div>
+    );
        <div className={styles.NFT}>
         <div>
           <h1 className={styles.title}>Welcome to BRXZ-8833!</h1>
           <div className={styles.description}>
-            BRXZ-8833 an NFT collection of 109 Artworks made by the Artist Braxxaz.
+          BRXZ-8833 is a collection of artworks by Braxxaz, based in a surrealistic and psychedelic universe.
           </div>
         </div>
       </div>
@@ -90,7 +104,15 @@ const Home: NextPage = () => {
   </div>
         </div>  
       ) : (
-        <button onClick={connectWithMetamask}>Connect with Metamask</button>
+        <div >
+        <button  className={styles.btn} onClick={() => connectWithCoinbaseWallet()}>
+          Connect Coinbase Wallet
+        </button><br></br>
+        <button  className={styles.btn} onClick={() => connectWithMetamask()}>Connect MetaMask</button><br></br>
+        <button  className={styles.btn} onClick={() => connectWithWalletConnect()}>
+          Connect WalletConnect
+        </button><br></br>
+      </div>
       )}
       <footer className={styles.footer}>
        ©2022 Braxxaz. All Rights Reserved

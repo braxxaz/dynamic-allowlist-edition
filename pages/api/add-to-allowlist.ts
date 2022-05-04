@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { table } from "../../utils/Airtable";
 import styles from "../styles/Home.module.css";
+import React from "react";
+
 
 const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
   const { address } = JSON.parse(req.body);
@@ -41,4 +43,6 @@ const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
+
 export default addToAllowlist;
+
