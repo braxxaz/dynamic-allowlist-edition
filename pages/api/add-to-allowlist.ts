@@ -17,7 +17,7 @@ const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
   if (record.length > 0) {
     res.status(400).json({
       success: false,
-      error: "User is already in allowlist",
+      error: "User is already in the AirDrop list",
     });
   }
 
@@ -32,7 +32,7 @@ const addToAllowlist = async (req: NextApiRequest, res: NextApiResponse) => {
       ]);
       res.status(200).json({
         success: true,
-        message: "User added to allowlist",
+        message: "User added to the AirDrop list",
       });
     } catch (err) {
       res.status(500).json({

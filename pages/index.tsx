@@ -34,7 +34,6 @@ const Home: NextPage = () => {
   const [mintLoading, setMintLoading] = useState(false);
   const network = useNetwork();
 
-
   useEffect(() => {
     edition?.get("0").then((nft) => {
       setNftData(nft.metadata);
@@ -57,26 +56,27 @@ const Home: NextPage = () => {
       alert(payloadJson.error);
     }
   };
+
   var React = require('react');
   var { SocialIcon } = require('react-social-icons');
 
-  return (
+  return (   
     <div className={styles.container}>
-          <Head>
+      <Head>
         <title>Braxxaz - BRXZ-8833</title>
         <meta name="description" content="Braxxaz - AirDrop list" />
         <link rel="icon" href="/favicon.gif" />
- 
-      </Head>   
+
+      </Head>
       <div>
-        <button className={styles.btn2} onClick={disconnectWallet}>Disconnect</button>
+        <button className={styles.btn2} onClick={disconnectWallet}>Disconnect Wallet</button>
       </div>
-    );
-       <div className={styles.NFT}>
+
+      <div className={styles.NFT}>
         <div>
           <h1 className={styles.title}>Welcome to BRXZ-8833!</h1>
           <div className={styles.description}>
-          BRXZ-8833 is a collection of artworks by Braxxaz, based in a surrealistic and psychedelic universe.
+            BRXZ-8833 is a collection of artworks by Braxxaz, based in a surrealistic and psychedelic universe.
           </div>
         </div>
       </div>
@@ -87,59 +87,71 @@ const Home: NextPage = () => {
               src="/braxxaz-icon.jpg"
               width="273"
               height="273"
-              objectFit="contain"
-            />
+              objectFit="contain" />
+              
           )}
-      <button
+          <button
             className={styles.btn}
             disabled={addWalletLoading}
             onClick={addWallet}
           >
             {addWalletLoading ? "loading..." : "Add wallet to AirDrop list"}
-          </button>
-          <div className={styles.btn}>
-    <Link href="https://opensea.io/collection/brxz-8833">
-      <a onClick={() => console.log("clicked")}>Explore the Collection</a>
-    </Link>
-  </div>
-        </div>  
+          </button> 
+        </div>
+      
       ) : (
-        <div >
-        <button  className={styles.btn} onClick={() => connectWithCoinbaseWallet()}>
-          Connect Coinbase Wallet
-        </button><br></br>
-        <button  className={styles.btn} onClick={() => connectWithMetamask()}>Connect MetaMask</button><br></br>
-        <button  className={styles.btn} onClick={() => connectWithWalletConnect()}>
-          Connect WalletConnect
-        </button><br></br>
-      </div>
+        <div> 
+          <button className={styles.btn} onClick={() => connectWithCoinbaseWallet()}>
+            Connect Coinbase Wallet
+          </button><br></br>
+          <button className={styles.btn} onClick={() => connectWithMetamask()}>Connect MetaMask</button><br></br>
+          <button className={styles.btn} onClick={() => connectWithWalletConnect()}>
+            Connect WalletConnect
+          </button><br></br>
+        </div>
       )}
+
+      <div className={styles.btn}>
+        <Link href="https://opensea.io/collection/brxz-8833">
+          <a onClick={() => console.log("clicked")}>Explore the Collection</a>
+        </Link>
+
+      </div>    
       <footer className={styles.footer}>
-       ©2022 Braxxaz. All Rights Reserved
-       <br></br>
-       <Grid  container spacing={2} direction="row" justifyContent="space-around" alignItems="center" color= "black" style={{ margin: "1.5em 0" }}>
-      <Grid      >
-       <SocialIcon url="https://instagram.com/braxxaz" network="instagram" style={{ height:33, width: 33 }} />
-      </Grid>  <br></br>
-      <Grid      >
-       <SocialIcon url="https://twitter.com/braxxaz" network="twitter" style={{ height:33, width: 33 }}  />
-      </Grid>  <br></br>
-      <Grid      >
-       <SocialIcon url="https://facebook.com/braxxaz" network="facebook" style={{ height:33, width: 33 }}  />
-      </Grid>  <br></br>
-      <Grid      >
-       <SocialIcon url="https://pinterest.com/braxxaz13" network="pinterest" style={{ height:33, width: 33 }} />
-      </Grid>  <br></br>
-      <Grid      >
-       <SocialIcon url="https://www.behance.net/braxxaz" network="behance" style={{ height:33, width: 33 }} />
-       </Grid>  <br></br>
-      {/* add social media*/}
-    </Grid> 
+      <Grid container spacing={2} direction="row" justifyContent="space-around" alignItems="center" color="black" style={{ margin: "1.5em 0" }}>
+          <Grid>
+            <SocialIcon url="https://instagram.com/braxxaz" network="instagram" style={{ height: 33, width: 33 }} />
+          </Grid>  <br></br>
+          <Grid>
+            <SocialIcon url="https://twitter.com/braxxaz" network="twitter" style={{ height: 33, width: 33 }} />
+          </Grid>  <br></br>
+          <Grid>
+            <SocialIcon url="https://facebook.com/braxxaz" network="facebook" style={{ height: 33, width: 33 }} />
+          </Grid>  <br></br>
+          <Grid>
+            <SocialIcon url="https://pinterest.com/braxxaz13" network="pinterest" style={{ height: 33, width: 33 }} />
+          </Grid>  <br></br>
+          <Grid>
+            <SocialIcon url="https://www.behance.net/braxxaz" network="behance" style={{ height: 33, width: 33 }} />
+          </Grid>  <br></br>
+          {/* add social media*/}
+        </Grid>
+        {"© 2022 Braxxaz. All Rights Reserved"}
+        <br></br>
+        <Grid container spacing={2} direction="row" justifyContent="space-around" alignItems="center" color="black" style={{ margin: "1.5em 0" }}>
+        </Grid><Link href="https://braxxaz.xyz/">
+          Official Website
+        </Link>
+        <br></br>
+        <Link href="https://nft.braxxaz.xyz/">
+          NFTs Website
+        </Link>
+        <br></br>
 
       </footer>
     </div>
+    
   );
-
 };
 
 export default Home;

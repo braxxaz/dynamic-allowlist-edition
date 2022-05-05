@@ -3,24 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 107vh;
-  background-color: #000000;
+  height: 106vh;
   text-align: center;
   font-family: '8Bits';
-}
-
-.bg-video-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  background: url(https://youtu.be/RQzWgKUr9jY) no-repeat center center/cover;
-}
-
-.video {
-  min-width: 100%;
-  min-height: 100vh;
-  z-index: 1;
 }
 
 .container > button,
@@ -37,6 +22,7 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: '8Bits';
+  font-size: 13px;
   margin-top: 33px;
 }
 
@@ -49,13 +35,13 @@
   
 }
 
-.container > button, .btn2 {
+.btn2 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
   /* position: static; */
   display: inline-flex;
-  background: rgb(205, 17, 238);
+  background: rgb(238, 17, 164);
   color: rgb(0, 0, 0);
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -63,10 +49,10 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: '8Bits';
-  margin-top: 77x;
+  /* margin-top: 77x; */
   margin-right: -1100px;
   /* margin-left: ; */
-  font-size: 11;
+  font-size: 11px;
 }
 
 
@@ -88,7 +74,7 @@
   justify-content: center;
   margin: 10px 0px;
   font-size: 0.8rem;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: '8Bits';
 }
 
@@ -107,7 +93,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    object-position: left;
+    object-position: center;
     font-family: '8Bits';
   }
 }
@@ -115,7 +101,7 @@
 .title {
   font-size: 2rem;
   margin: 2rem 0;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-family: '8Bits';
   margin-top: -33;
 }
@@ -124,11 +110,18 @@
   line-height: 1;
   margin: 2rem 0;
   font-size: 0.7rem;
-  color: #fff;
+ color: rgb(0, 0, 0);
   font-family: '8Bits';
   margin-top: -33;
 }
-
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .button {
   border-radius: 4px;
   background-color: blue;
@@ -145,14 +138,14 @@
 .footer {
   display: flex;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  margin-top: 3%;
+  color: #08ff94;
+  margin-top: 1%;
   font-family: '8Bits';
-  font-size: 13px;
+  font-size: 9px;
 }
 
 .image {
