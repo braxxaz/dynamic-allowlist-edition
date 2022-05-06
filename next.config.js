@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["gateway.ipfscdn.io"],
+    
   },
+  
 };
 
-module.exports = nextConfig;
+module.exports = {
+  useFileSystemPublicRoutes: false,
+}

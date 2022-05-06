@@ -18,7 +18,6 @@ import Link from 'next/link'
 import React from 'react';
 import { Grid } from "@material-ui/core";
 
-
 const Home: NextPage = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
@@ -26,7 +25,7 @@ const Home: NextPage = () => {
   const connectWithCoinbaseWallet = useCoinbaseWallet();
   const disconnectWallet = useDisconnect();
 
-  const edition = useEdition("0xcD0148C3DB323CaD4597D8f0F028522850d2186e");
+  const edition = useEdition("0x61ff5B3beB88C3a6E809295DE12C713E4F7088Dc");
   const [nftData, setNftData] = useState<EditionMetadata["metadata"] | null>(
     null
   );

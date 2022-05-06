@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
+    
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.11",
