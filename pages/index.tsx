@@ -67,13 +67,13 @@ const Home: NextPage = () => {
         <meta name="description" content="Braxxaz - AirDrop list" />
         <link rel="icon" href="/favicon.gif" />
 
-      </Head>
+      </Head>       <div>
+      <Main />
+    </div>
       <div>
         <button className={styles.btn2} onClick={disconnectWallet}>Disconnect Wallet</button>
       </div>
-      <div>
-      <Main />
-    </div>
+
       <div className={styles.NFT}>
         <div>
           <h1 className={styles.title}>Welcome to BRXZ-8833!</h1>
