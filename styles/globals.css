@@ -25,6 +25,9 @@ body {
 
 }
 
+.content {
+  z-index: 1;
+}
 
 h1, h2, h2, h4 {
   font-family: '8Bits';
