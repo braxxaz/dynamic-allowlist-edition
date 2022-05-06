@@ -17,6 +17,7 @@ import Head from "next/head";
 import Link from 'next/link'
 import React from 'react';
 import { Grid } from "@material-ui/core";
+import Main from './components/Main';
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -70,7 +71,9 @@ const Home: NextPage = () => {
       <div>
         <button className={styles.btn2} onClick={disconnectWallet}>Disconnect Wallet</button>
       </div>
-
+      <div>
+      <Main />
+    </div>
       <div className={styles.NFT}>
         <div>
           <h1 className={styles.title}>Welcome to BRXZ-8833!</h1>
@@ -78,7 +81,7 @@ const Home: NextPage = () => {
             BRXZ-8833 is a collection of artworks by Braxxaz, based in a surrealistic and psychedelic universe.
           </div>
         </div>
-      </div><br></br><br></br>
+      </div><br></br>
       {address ? (
         <div className={styles.NFT}>
           {nftData?.image && (

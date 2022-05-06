@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 106vh;
+  height: 107vh;
   text-align: center;
   font-family: '8Bits';
 }
@@ -101,7 +101,7 @@
 .title {
   font-size: 2rem;
   margin: 2rem 0;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: '8Bits';
   margin-top: -33;
 }
@@ -110,9 +110,10 @@
   line-height: 1;
   margin: 2rem 0;
   font-size: 0.7rem;
- color: rgb(0, 0, 0);
+ color: rgb(255, 255, 255);
   font-family: '8Bits';
   margin-top: -33;
+  text-shadow: 2px 2px #000000;
 }
 .video {
   object-fit: cover;
@@ -146,6 +147,7 @@
   margin-top: 1%;
   font-family: '8Bits';
   font-size: 9px;
+  text-shadow: 2px 2px #000000;
 }
 
 .image {
@@ -153,3 +155,4 @@
   height: 50%;
   object-position: left;
 }
+

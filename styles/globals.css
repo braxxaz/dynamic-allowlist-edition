@@ -6,7 +6,7 @@
   font-style: normal;
   }
 
-video {
+video { z-index: -1;
     object-fit: cover;
     width: 100vw;
     height: 100vh;
@@ -17,18 +17,20 @@ video {
   
 
 html, 
-body {   background:  url("https://website-braxxaz.s3.us-east-2.amazonaws.com/background-braxxaz.jpg") no-repeat fixed center;
-  background-color: black;
+body {  
+
   padding: 0;
   margin: 0;
   font-family: '8Bits';
-  
+
 }
 
 
 h1, h2, h2, h4 {
   font-family: '8Bits';
+    text-shadow: 3px 3px #000000;
 }
+
 
 a {
   color: inherit;
