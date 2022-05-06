@@ -78,7 +78,7 @@ const Home: NextPage = () => {
             BRXZ-8833 is a collection of artworks by Braxxaz, based in a surrealistic and psychedelic universe.
           </div>
         </div>
-      </div><br></br>
+      </div><br></br><br></br>
       {address ? (
         <div className={styles.NFT}>
           {nftData?.image && (
