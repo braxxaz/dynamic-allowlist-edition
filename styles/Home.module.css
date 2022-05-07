@@ -116,7 +116,7 @@
   text-shadow: 2px 2px #000000;
 }
 
-.video { z-index: -1;
+.video { z-index: -100;
   object-fit: cover;
   width: 100vw;
   height: 100vh;
