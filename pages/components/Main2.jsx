@@ -6,7 +6,7 @@ const isSafari = () => {
 };
 
 const mainVideo =
-  "https://website-braxxaz.s3.us-east-2.amazonaws.com/nfts+intro+web.mp4";
+  "https://website-braxxaz.s3.us-east-2.amazonaws.com/nfts+intro+site.mp4";
 
 export default function Main() {
   const videoParentRef = useRef();
