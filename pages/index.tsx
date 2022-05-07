@@ -66,10 +66,10 @@ const Home: NextPage = () => {
         <title>Braxxaz - BRXZ-8833</title>
         <meta name="description" content="Braxxaz - AirDrop list" />
         <link rel="icon" href="/favicon.gif" />
-      </Head>       
-      <div>
+      </Head>            <div>
       <Main />
     </div>
+ 
       <div>
         <button className={styles.btn2} onClick={disconnectWallet}>Disconnect Wallet</button>
       </div>
