@@ -18,6 +18,8 @@ import Link from 'next/link'
 import React from 'react';
 import { Grid } from "@material-ui/core";
 import Main from './components/Main';
+import Main2 from "./components/Main2";
+
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -67,7 +69,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Braxxaz - AirDrop list" />
         <link rel="icon" href="/favicon.gif" />
       </Head>            <div>
-      <Main />
+      <Main2 />
     </div>
  
       <div>
